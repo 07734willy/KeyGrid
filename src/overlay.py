@@ -1,5 +1,5 @@
 from PyQt5.QtGui import QPainter, QPen
-from PyQt5.QtWidgets import QMainWindow, QWidget, QApplication
+from PyQt5.QtWidgets import QMainWindow, QWidget, QApplication, QDesktopWidget
 from PyQt5.QtCore import Qt, QEvent
 
 
@@ -15,11 +15,12 @@ class Overlay(QMainWindow, QWidget):
 		self.init_ui(geometry)
 
 	def init_ui(self, geometry):
-		self.setWindowFlags(Qt.FramelessWindowHint)
+		self.setWindowFlags(Qt.FramelessWindowHint | Qt.X11BypassWindowManagerHint)
 		self.setGeometry(geometry.x, geometry.y, geometry.width, geometry.height)
 		self.setStyleSheet("background:transparent")
 		self.setAttribute(Qt.WA_TranslucentBackground)
 		self.show()
+		self.activateWindow()
 
 	def eventFilter(self, source, event):
 		if event.type() == QEvent.WindowDeactivate:
