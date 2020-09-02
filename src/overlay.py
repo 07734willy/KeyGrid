@@ -3,7 +3,6 @@ from PyQt5.QtWidgets import QMainWindow, QWidget, QApplication
 from PyQt5.QtCore import Qt, QEvent
 
 
-
 class Overlay(QMainWindow, QWidget):
 
 	def __init__(self, geometry, handler):

@@ -5,8 +5,8 @@ from lines import MinorLine, MajorLine
 from overlay import Overlay
 
 KEY_MAP = {
-	Qt.Key_Q: (None,  4), Qt.Key_W: (None,  3), Qt.Key_E: (None,  2), Qt.Key_R: (None,  1), 
-	Qt.Key_Y: (None,  0), Qt.Key_U: (None, -1), Qt.Key_I: (None, -2), Qt.Key_O: (None, -3), Qt.Key_P: (None, -4), 
+	Qt.Key_Q: (None, -4), Qt.Key_W: (None, -3), Qt.Key_E: (None, -2), Qt.Key_R: (None, -1), 
+	Qt.Key_Y: (None,  0), Qt.Key_U: (None,  1), Qt.Key_I: (None,  2), Qt.Key_O: (None,  3), Qt.Key_P: (None,  4), 
 
 	Qt.Key_A: (-4, None), Qt.Key_B: (-3, None), Qt.Key_C: (-2, None), Qt.Key_D: (-1, None), 
 	Qt.Key_H: ( 0, None), Qt.Key_J: ( 1, None), Qt.Key_K: ( 2, None), Qt.Key_L: ( 3, None), Qt.Key_Semicolon: ( 4, None), 
@@ -77,8 +77,8 @@ class Grid(object):
 		dy = (self.y2 - self.y1) / 9
 
 		for i in range(8):
-			x = int(round(self.x1 + i*dx + dx))
-			y = int(round(self.y1 + i*dy + dy))
+			x = int(round(self.x1 + i*dx + dx/2))
+			y = int(round(self.y1 + i*dy + dy/2))
 
 			if i in (2, 5):
 				yield MajorLine(x, self.y1, x, self.y2)

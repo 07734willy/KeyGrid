@@ -39,9 +39,8 @@ def main():
 	geometry = window.get_geometry()
 
 	def mouse_move(grid):
-		xpos, ypos = grid.click_pos()
-		root.warp_pointer(geometry.x + xpos, geometry.y + ypos)
-		display.sync()
+		dx, dy = grid.click_pos()
+		root.warp_pointer(geometry.x + dx, geometry.dy)
 
 	app = QApplication(sys.argv)
 	grid = Grid(geometry, grid_update=mouse_move)
