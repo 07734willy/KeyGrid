@@ -5,8 +5,8 @@ from lines import MinorLine, MajorLine
 from overlay import Overlay
 
 KEY_MAP = {
-	Qt.Key_Q: (None,  4), Qt.Key_W: (None,  3), Qt.Key_E: (None,  2), Qt.Key_R: (None,  1), 
-	Qt.Key_Y: (None,  0), Qt.Key_U: (None, -1), Qt.Key_I: (None, -2), Qt.Key_O: (None, -3), Qt.Key_P: (None, -4), 
+	Qt.Key_Q: (None, -4), Qt.Key_W: (None, -3), Qt.Key_E: (None, -2), Qt.Key_R: (None, -1), 
+	Qt.Key_Y: (None,  0), Qt.Key_U: (None,  1), Qt.Key_I: (None,  2), Qt.Key_O: (None,  3), Qt.Key_P: (None,  4), 
 
 	Qt.Key_A: (-4, None), Qt.Key_S: (-3, None), Qt.Key_D: (-2, None), Qt.Key_F: (-1, None), 
 	Qt.Key_H: ( 0, None), Qt.Key_J: ( 1, None), Qt.Key_K: ( 2, None), Qt.Key_L: ( 3, None), Qt.Key_Semicolon: ( 4, None), 
